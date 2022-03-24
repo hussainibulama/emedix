@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/home";
+import Search from "./components/search";
+import Category from "./components/category";
+import ViewProduct from "./components/viewproduct";
+import Order from "./components/user";
+import CartMobile from "./components/cartmobile/";
 
-function App() {
+const App=()=> {
+  const special = localStorage.getItem("customer_id");
+  if(special === null){
+    let customer_key =
+    Math.floor(100000 + Math.random() * 900000) +
+    String(Math.floor(100 + Math.random() * 999));
+    localStorage.setItem("customer_id", customer_key);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search/:id" element={<Search />} />
+        <Route path="/category/:id" element={<Category />} />
+        <Route path="/viewproduct/:id" element={<ViewProduct />} />
+        <Route path="/orders" element={<Order />} />
+        <Route path="/cartmobile" element={<CartMobile />} />
+      </Routes>
+   </>
   );
 }
 

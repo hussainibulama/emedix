@@ -1,0 +1,15 @@
+.navbar{
+    background-color: #fff !important;
+}
+.nav-link{
+.searchIcon{
+    font-size: 25px;
+    color:#e47c8d;
+}
+&.active{
+    .searchIcon{
+        font-size: 25px;
+        color:#D23F57;
+    }
+}
+}

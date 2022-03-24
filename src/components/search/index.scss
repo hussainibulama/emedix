@@ -1,0 +1,423 @@
+$font-family: "Noto Sans", sans-serif;
+.App{
+    position: relative;
+    background-color: #F6F9FC;
+    font-family: $font-family;
+    width:100%;
+    .mainBody{
+        position: relative;
+        width:100%;
+        .cat-and-topper{
+            position: relative;
+            width:100%;
+            padding: 2em;
+            padding-bottom: 0;
+            height:100%;
+            .search-r{
+                position: relative;
+                background-color: #fff;
+                border-radius: 10px;
+                margin-bottom:0.5em;
+                width:100%;
+                height:100%;
+                padding: 0.5em;
+                font-family: $font-family;
+                h4{
+                    position: relative;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 1.5;
+                    text-transform: none;
+                    color: #646b77;
+                    white-space: normal;
+                }
+                p{
+                    position: relative;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                    font-size: 14px;
+                    color: #7D879C;
+                    text-transform: none;
+                    white-space: normal;
+                }
+            }
+       
+        }
+        .mid-header{
+            position: relative;
+            padding:1em;
+            width:100%;
+            h3{
+                font-family: $font-family;
+                font-size: 25px;
+                font-weight: 700;
+                padding:0.5em;
+                padding-bottom:0;
+                line-height: 1;
+                text-transform: none;
+                white-space: normal;
+            }
+        }
+        .product-section{
+            position: relative;
+            width:100%;
+            height:100%;
+            padding:1em;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .product{
+                background-color: #fff;
+                border-radius: 8px;
+                -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                box-shadow: 0px 1px 3px #03004717;
+                transition: all 250ms ease-in-out;
+                width: 19%;
+                border:1px solid #fff;
+                margin-left:0.5em;
+                margin-bottom:0.5em;
+                &:hover{
+                    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+                }
+                .ptop{
+                    position: relative;
+                    width: 100%;
+                    height:250px;
+                    .off{
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size:10px;
+                        width:50px;
+                        height:20px;
+                        background-color: #D23F57;
+                        font-weight: 900;
+                        margin:1em;
+                        color:#fff;
+                        border-radius: 10px;
+                    }
+                    img{
+                        position: relative;
+                        width:100%;
+                        height:90%;
+                        object-fit: contain;
+                    }
+                }
+                .pbottom{
+                    position: relative;
+                    width: 100%;
+                    height:60px;
+                    div.sep{
+                        position: relative;
+                        padding-left: 1em;
+                        padding-right: 1em;
+                        width:100%;
+                        span.header{
+                            font-family: $font-family;
+                            position: relative;
+                            font-size: 14px;
+                            font-weight: 600;
+                            overflow: hidden;
+                            display: inline-block;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                              width:165px;
+                            line-height: 1.5;
+                            text-align: left;
+                            color: #373F50;
+                        }
+                        span.norms{
+                            font-family: $font-family;
+                            position: relative;
+                            font-size: 14px;
+                            font-weight: normal;
+                            color: #D23F57;
+                            &.crossed{
+                            color: #D23F57;
+                            text-decoration: line-through;
+                            color:#7D879C;
+
+                            }
+                        }
+                    }
+                    div.split{
+                        padding-bottom: 1em;
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .plus{
+                            position: relative;
+                            display: flex;
+                            top:-0.5em;
+                            justify-content: center;
+                            align-items: center;
+                            font-family: $font-family;
+                            border:1px solid #D23F57;
+                            color:#D23F57;
+                            line-height: 0;
+                            font-size: 22px;
+                            border-radius:5px;
+                            height:30px;
+                            background-color:#fff;
+
+                            &:hover{
+                                 background-color:#fce8eb;
+                            }
+                            
+                        }
+                    }
+                    
+                }
+            }
+
+        }
+        .more-loader{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            button{
+                position: relative;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                background-color: #D23F57;
+                color:#fff;
+                font-family: $font-family;
+                border:1px solid #D23F57;
+                border-radius: 10px;
+                padding: 4px 16px;
+                border-radius: 4px;
+                &:hover{
+                    background-color: #d17a88;
+                }
+                &:disabled{
+                    background-color: #dfe4ec;
+                border:1px solid #dfe4ec;
+
+                }
+            }
+        }
+    }
+    .mobile-menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 868px) {
+.App{
+    position: relative;
+    background-color: #F6F9FC;
+    font-family: $font-family;
+    width:100%;
+    .mainBody{
+        position: relative;
+        width:100%;
+        .cat-and-topper{
+            position: relative;
+            display: flex;
+            flex-direction: column !important;
+            
+            width:100% !important;
+            height:100% !important;
+            padding:10px;
+            padding-bottom: 0;
+            .search-r{
+                position: relative;
+                background-color: #fff;
+                border-radius: 10px;
+                margin-bottom:0.5em;
+                width:100%;
+                height:100%;
+                padding: 0.5em;
+                font-family: $font-family;
+                h4{
+                    position: relative;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 1.5;
+                    text-transform: none;
+                    color: #646b77;
+                    white-space: normal;
+                }
+                p{
+                    position: relative;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                    font-size: 14px;
+                    color: #7D879C;
+                    text-transform: none;
+                    white-space: normal;
+                }
+            }
+       
+        }
+        .mid-header{
+            position: relative;
+            padding:1em;
+            width:100%;
+            h3{
+                font-family: $font-family;
+                font-size: 25px;
+                font-weight: 700;
+                padding:0.5em;
+                padding-bottom:0;
+                line-height: 1;
+                text-transform: none;
+                white-space: normal;
+            }
+        }
+        .product-section{
+            position: relative;
+            width:100%;
+            height:100%;
+            padding:1em;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .product{
+                background-color: #fff;
+                border-radius: 8px;
+                -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                box-shadow: 0px 1px 3px #03004717;
+                transition: all 250ms ease-in-out;
+                width: 19%;
+                border:1px solid #fff;
+                margin-left:0.5em;
+                margin-bottom:0.5em;
+                &:hover{
+                    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+                }
+                .ptop{
+                    position: relative;
+                    width: 100%;
+                    height:250px;
+                    .off{
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size:10px;
+                        width:50px;
+                        height:20px;
+                        background-color: #D23F57;
+                        font-weight: 900;
+                        margin:1em;
+                        color:#fff;
+                        border-radius: 10px;
+                    }
+                    img{
+                        position: relative;
+                        width:100%;
+                        height:90%;
+                        object-fit: contain;
+                    }
+                }
+                .pbottom{
+                    position: relative;
+                    width: 100%;
+                    height:60px;
+                    div.sep{
+                        position: relative;
+                        padding-left: 1em;
+                        padding-right: 1em;
+                        width:100%;
+                        span.header{
+                            font-family: $font-family;
+                            position: relative;
+                            font-size: 14px;
+                            font-weight: 600;
+                            overflow: hidden;
+                            display: inline-block;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                              width:165px;
+                            line-height: 1.5;
+                            text-align: left;
+                            color: #373F50;
+                        }
+                        span.norms{
+                            font-family: $font-family;
+                            position: relative;
+                            font-size: 14px;
+                            font-weight: normal;
+                            color: #D23F57;
+                            &.crossed{
+                            color: #D23F57;
+                            text-decoration: line-through;
+                            color:#7D879C;
+
+                            }
+                        }
+                    }
+                    div.split{
+                        padding-bottom: 1em;
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .plus{
+                            position: relative;
+                            display: flex;
+                            top:-0.5em;
+                            justify-content: center;
+                            align-items: center;
+                            font-family: $font-family;
+                            border:1px solid #D23F57;
+                            color:#D23F57;
+                            line-height: 0;
+                            font-size: 22px;
+                            border-radius:5px;
+                            height:30px;
+                            background-color:#fff;
+
+                            &:hover{
+                                 background-color:#fce8eb;
+                            }
+                            
+                        }
+                    }
+                    
+                }
+            }
+
+        }
+        .more-loader{
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            button{
+                position: relative;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                background-color: #D23F57;
+                color:#fff;
+                font-family: $font-family;
+                border:1px solid #D23F57;
+                border-radius: 10px;
+                padding: 4px 16px;
+                border-radius: 4px;
+                &:hover{
+                    background-color: #d17a88;
+                }
+                &:disabled{
+                    background-color: #dfe4ec;
+                border:1px solid #dfe4ec;
+
+                }
+            }
+        }
+    }
+    .mobile-menu{
+        display: block;
+    }
+}
+}
