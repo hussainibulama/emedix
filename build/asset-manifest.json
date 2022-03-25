@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b690f30a.css",
+    "main.js": "/static/js/main.5619506f.js",
+    "static/js/787.8d2b75bf.chunk.js": "/static/js/787.8d2b75bf.chunk.js",
+    "static/media/banner1.png": "/static/media/banner1.1288d76eb231b5c8334e.png",
+    "static/media/banner2.png": "/static/media/banner2.ebfbc4419ddf0c94ae48.png",
+    "static/media/goli.jpeg": "/static/media/goli.dfd7108e49f37681518e.jpeg",
+    "static/media/e-medix-logo-dark.png": "/static/media/e-medix-logo-dark.5699c1f32375adf830fe.png",
+    "static/media/e-medix-logo-light.png": "/static/media/e-medix-logo-light.8f908b09cbd3df73ab73.png",
+    "static/media/beauty.jpeg": "/static/media/beauty.e3491d3e48c146c7f1d6.jpeg",
+    "index.html": "/index.html",
+    "main.b690f30a.css.map": "/static/css/main.b690f30a.css.map",
+    "main.5619506f.js.map": "/static/js/main.5619506f.js.map",
+    "787.8d2b75bf.chunk.js.map": "/static/js/787.8d2b75bf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b690f30a.css",
+    "static/js/main.5619506f.js"
+  ]
+}
