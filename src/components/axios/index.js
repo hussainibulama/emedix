@@ -5,7 +5,10 @@ const Instance = axios.create({
   mode: "cors",
   headers: {
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods":" GET, PUT, POST, DELETE, OPTIONS"
   },
+
 });
 
 
