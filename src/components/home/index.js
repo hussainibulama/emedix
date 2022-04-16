@@ -30,6 +30,7 @@ const Home =()=> {
     const [pbeauty, setPbeauty] = useState([]);
     const [loading, setLoading] = useState(false);
     const [CartsTotal, setCartsTotal] = useState(0);
+    const [Catego, setCategory] = useState([]);
 
     const [more, setMore] = useState(10);
     const images = [
@@ -68,7 +69,7 @@ const Home =()=> {
         try {
             let res = await Instance.post("/fetchproducts", {
               store_id: 7,
-              category: "Health",
+              category: "Vitamins & Supplements",
             });
             const result = await res.data;
             if(result.success===true){
@@ -78,11 +79,24 @@ const Home =()=> {
       console.log(e);
         }
     }
+      const Category =async()=>{
+        try {
+            let res = await Instance.post("/selectcategory", {
+              store_id: 7,
+            });
+            const result = await res.data;
+            
+                setCategory(result)
+            
+        }catch(e){
+      console.log(e);
+        }
+    }
     const Beauty =async()=>{
         try {
             let res = await Instance.post("/fetchproducts", {
               store_id: 7,
-              category: "Beauty",
+              category: "Sexual Health Products",
             });
             const result = await res.data;
             if(result.success===true){
@@ -129,10 +143,12 @@ const Home =()=> {
       }
     
     useEffect(()=>{
+        Category();
         All();
         Health();
         Beauty();
         GetTotalCart();
+
     },[])
   return (
     <div className="App v1">
@@ -144,9 +160,10 @@ const Home =()=> {
                     <div className="catItem">
                         <h3>Top Categories</h3>
                         <ul>
-                            <li  onClick={()=>navigate("/")}><span> <FontAwesomeIcon className="fabag" icon={faHomeAlt} /> </span> Home</li>
-                            <li  onClick={()=>navigate("/category/Health")}><span> <FontAwesomeIcon className="fabag" icon={faHouseMedical} /> </span> Health</li>
-                            <li onClick={()=>navigate("/category/Beauty")}><span> <FontAwesomeIcon className="fabag" icon={faPaintBrush} /> </span> Beauty</li>
+                            {Catego.map((item)=>(
+                            <li  onClick={()=>navigate(`/category/${item.title}`)}><span>  </span> {item.title}</li>
+                            ))}
+
                         </ul>
 
                     </div>
@@ -165,8 +182,8 @@ const Home =()=> {
                 />
                 </div>
             </div>
-            <div className="mid-header">
-                <h3>Top Deals Health</h3>
+            <div className="mid-header" style={{marginTop:"5em"}}>
+                <h3>Top Deals Vitamins & Supplements</h3>
             </div>
     
             <div className="product-section">
@@ -174,8 +191,8 @@ const Home =()=> {
                     <div className="product">
                      
                     <div className="ptop">
-                    {item.p_cprice>0&&item.p_cpu>0&&item.p_cpu!==item.p_cprice&&( 
-                        <div className="off">{cal(item.p_cprice,item.p_cpu)}% off</div>
+                    {item.p_cprice>0&&item.p_price>0&&item.p_price!==item.p_cprice&&( 
+                        <div className="off">{cal(item.p_price,item.p_cprice)}% off</div>
                     )} 
                         <img onClick={()=>navigate(`/viewproduct/${item.p_id}`)} src={""+item.image_link} alt="products"/>
                     </div>
@@ -184,7 +201,7 @@ const Home =()=> {
                             <span className="header">{item.p_title}</span>
                         </div>
                         <div className="sep split">
-                            <div><span className="norms">&#8358;{item.p_cprice} </span><span className="norms crossed">&#8358;{item.p_cpu}</span></div>
+                            <div><span className="norms">&#8358;{item.p_price} </span><span className="norms crossed">&#8358;{item.p_cprice}</span></div>
                             <div>
                                 <button disabled={loading} onClick={()=>addCart(
                                     item.p_id,
@@ -201,15 +218,15 @@ const Home =()=> {
          
             </div>
             <div className="mid-header">
-                <h3>Beauty plus</h3>
+                <h3>Sexual Health Products</h3>
             </div>
             <div className="product-section">
             {pbeauty.slice(0,5).map((item)=>(
                     <div className="product">
                      
                     <div className="ptop">
-                    {item.p_cprice>0&&item.p_cpu>0&&item.p_cpu!==item.p_cprice&&( 
-                        <div className="off">{cal(item.p_cprice,item.p_cpu)}% off</div>
+                    {item.p_cprice>0&&item.p_price>0&&item.p_price!==item.p_cprice&&( 
+                        <div className="off">{cal(item.p_price,item.p_cprice)}% off</div>
                     )} 
                         <img onClick={()=>navigate(`/viewproduct/${item.p_id}`)} src={""+item.image_link} alt="products"/>
                     </div>
@@ -218,7 +235,7 @@ const Home =()=> {
                             <span className="header">{item.p_title}</span>
                         </div>
                         <div className="sep split">
-                            <div><span className="norms">&#8358;{item.p_cprice} </span><span className="norms crossed">&#8358;{item.p_cpu}</span></div>
+                            <div><span className="norms">&#8358;{item.p_price} </span><span className="norms crossed">&#8358;{item.p_cprice}</span></div>
                             <div>
                                 <button disabled={loading} onClick={()=>addCart(
                                     item.p_id,
@@ -241,8 +258,8 @@ const Home =()=> {
                     <div className="product">
                      
                     <div className="ptop">
-                    {item.p_cprice>0&&item.p_cpu>0&&item.p_cpu!==item.p_cprice&&( 
-                        <div className="off">{cal(item.p_cprice,item.p_cpu)}% off</div>
+                    {item.p_cprice>0&&item.p_price>0&&item.p_price!==item.p_cprice&&( 
+                        <div className="off">{cal(item.p_price,item.p_cprice)}% off</div>
                     )} 
                         <img onClick={()=>navigate(`/viewproduct/${item.p_id}`)} src={""+item.image_link} alt="products"/>
                     </div>
@@ -251,7 +268,7 @@ const Home =()=> {
                             <span className="header">{item.p_title}</span>
                         </div>
                         <div className="sep split">
-                            <div><span className="norms">&#8358;{item.p_cprice} </span><span className="norms crossed">&#8358;{item.p_cpu}</span></div>
+                            <div><span className="norms">&#8358;{item.p_price} </span><span className="norms crossed">&#8358;{item.p_cprice}</span></div>
                             <div>
                                 <button disabled={loading} onClick={()=>addCart(
                                     item.p_id,

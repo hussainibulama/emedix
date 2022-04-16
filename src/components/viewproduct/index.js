@@ -140,7 +140,7 @@ const ViewProduct =()=> {
                 <div className="right_view">
                     <div className="resource">
                         <h3>{products.length>0&&products[0].p_title}</h3>
-                        <h5>&#8358;{products.length>0&&products[0].p_cprice}</h5>
+                        <h5>&#8358;{products.length>0&&products[0].p_price}</h5>
                         <p>Stock Available</p>
                         <button onClick={()=>addCart(
                                     products.length?products[0].p_id:"",
@@ -165,8 +165,8 @@ const ViewProduct =()=> {
                     <div className="product">
                      
                     <div className="ptop">
-                    {item.p_cprice>0&&item.p_cpu>0&&item.p_cpu!==item.p_cprice&&( 
-                        <div className="off">{cal(item.p_cprice,item.p_cpu)}% off</div>
+                    {item.p_cprice>0&&item.p_price>0&&item.p_price!==item.p_cprice&&( 
+                        <div className="off">{cal(item.p_price,item.p_cprice)}% off</div>
                     )} 
                         <img onClick={()=>navigate(`/viewproduct/${item.p_id}`)} src={""+item.image_link} alt="products"/>
                     </div>
@@ -175,7 +175,7 @@ const ViewProduct =()=> {
                             <span className="header">{item.p_title}</span>
                         </div>
                         <div className="sep split">
-                            <div><span className="norms">&#8358;{item.p_cprice} </span><span className="norms crossed">&#8358;{item.p_cpu}</span></div>
+                            <div><span className="norms">&#8358;{item.p_price} </span><span className="norms crossed">&#8358;{item.p_cprice}</span></div>
                             <div>
                                 <button disabled={loading} onClick={()=>addCart(
                                     item.p_id,
