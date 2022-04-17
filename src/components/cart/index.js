@@ -141,7 +141,7 @@ const AddPersonnel = (props)=>{
         }
       }
       const config = {
-        public_key: "FLWPUBK_TEST-9662e3897f31cfe63cb8fb3e787cb851-X",
+        public_key: "FLWPUBK-7ca020fc14447f7b59861061438060ae-X",
         tx_ref: rno,
         amount: parseInt(sumcart+1000),
         currency: "NGN",
